@@ -54,7 +54,7 @@ class Dashboard extends React.Component {
     return (
       <div id="dashboard">
         <section>
-          <h2>{I.t("voc.FormExample")}</h2>
+          <h2>{I.t("voc.FormExampleWithDomClasses")}</h2>
           <DataEntryForm schema={self.schema()} ref={instance => { this.form = instance; }}>
             <div id="example-form">
               <label htmlFor="username-field">Username</label>
@@ -94,13 +94,14 @@ class Dashboard extends React.Component {
           <h2>Please note:</h2>
           <ul>
             <li>Formatting is applied only to valid values</li>
+            <li>How validation is automatically fired on blur, so the state of blurred input element change accordingly to its new value</li>
             <li>How the year field is automatically formatted to remove leading zeros ("001900" -> "1900") - <em>implicit formatting by rule 'integer'</em></li>
-            <li>How the username field is automatically formatted to clean spaces ("   Hello   World! " -> "Hello World!") <em>explicit formatting with rule 'cleanSpaces'</em></li>
-            <li>How the year field prevents user from inserting letters typing <em>implicit constraint by rule 'integer'</em></li>
+            <li>How the username field is automatically formatted to clean spaces ("   Hello   World! " -> "Hello World!") - <em>explicit formatting with rule 'cleanSpaces'</em></li>
+            <li>How the year field prevents user from inserting letters typing - <em>implicit constraint by rule 'integer'</em></li>
             <li>How error messages can be specified for each field rule in the schema object</li>
             <li>When clicking "Validate" button, the first invalid field is automatically focused</li>
-            <li>How validation is automatically fired on blur, so its state change accordingly to its new value</li>
             <li>Open the browser console to see the object returned by DataEntry.validate function.</li>
+            <li>See the demo source code: the instance of dataentry is disposed inside `componentWillUnmount` React view function. Event handlers are removed here.</li>
           </ul>
         </section>
         <section>

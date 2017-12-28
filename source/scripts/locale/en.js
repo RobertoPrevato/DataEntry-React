@@ -24,7 +24,7 @@ export default {
       ReturnToHome: "Return to the homepage",
       SourceCode: "Source code:",
       UsefulLinks: "Useful links",
-      FormExample: "Form example"
+      FormExampleWithDomClasses: "Example form, using built-in DOM classes"
     },
     errors: {
       "required": "The field cannot be empty",
