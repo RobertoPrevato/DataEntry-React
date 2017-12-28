@@ -28,10 +28,10 @@ class Dashboard extends React.Component {
         validation: ["mustCheck"]
       },
       "favored-food": {
-        validation: ["required"]
+        validation: [{ name: "required", message: "Please select your favorite food" }]
       },
       "force-side": {
-        validation: ["required"]
+        validation: [{ name: "required", message: "Please select a side of the force" }]
       }
     };
   }
@@ -39,6 +39,13 @@ class Dashboard extends React.Component {
   validate() {
     this.form.validate().then(function (result) {
       console.log(result);
+
+      if (!result.valid)
+        // do nothing: the dataentry already did everything
+        return;
+
+      // everything is valid: we can use the data
+      console.info("Everything is valid!", result.values);
     });
   }
 
@@ -50,15 +57,15 @@ class Dashboard extends React.Component {
           <h2>{I.t("voc.FormExample")}</h2>
           <DataEntryForm schema={self.schema()} ref={instance => { this.form = instance; }}>
             <div id="example-form">
-              <label>Username</label>
-              <input type="text" name="name" /><br />
-              <label>Year (between 1900 and 2015)</label>
-              <input type="text" name="year" />
+              <label htmlFor="username-field">Username</label>
+              <input id="username-field" type="text" name="name" /><br />
+              <label htmlFor="year-field">Year (between 1900 and 2015)</label>
+              <input id="year-field" type="text" name="year" />
               <br />
-              <label>A field that is not required, but accepts only letters</label>
-              <input type="text" name="only-letters" /><br />
-              <label>Favored food:</label>
-              <select name="favored-food">
+              <label htmlFor="example-field">A field that is not required, but accepts only letters</label>
+              <input id="example-field" type="text" name="only-letters" /><br />
+              <label htmlFor="favored-food-select">Favored food:</label>
+              <select id="favored-food-select" name="favored-food">
                 <option></option>
                 <optgroup label="Salty">
                   <option value="pizza">Pizza</option>
@@ -72,16 +79,29 @@ class Dashboard extends React.Component {
                   <option value="marmalade">Marmalade</option>
                 </optgroup>
               </select><br />
-              <label>Light side of the force:</label>
-              <input type="radio" value="light" name="force-side" /><br />
-              <label>Dark side of the force:</label>
-              <input type="radio" value="dark" name="force-side" /><br />
-              <label className="inline">A checkbox that must be checked (policy acceptance)</label>
-              <input type="checkbox" name="policy-read" /><br />
+              <label htmlFor="light-side-radio">Light side of the force:</label>
+              <input id="light-side-radio" type="radio" value="light" name="force-side" /><br />
+              <label htmlFor="dark-side-radio">Dark side of the force:</label>
+              <input id="dark-side-radio" type="radio" value="dark" name="force-side" /><br />
+              <label htmlFor="policy-read-check" className="inline">A checkbox that must be checked (policy acceptance)</label>
+              <input id="policy-read-check" type="checkbox" name="policy-read" /><br />
             </div>
             <hr />
             <button className="validation-trigger" onClick={() => { this.validate(); }}>Validate</button>
           </DataEntryForm>
+        </section>
+        <section>
+          <h2>Please note:</h2>
+          <ul>
+            <li>Formatting is applied only to valid values</li>
+            <li>How the year field is automatically formatted to remove leading zeros ("001900" -> "1900") - <em>implicit formatting by rule 'integer'</em></li>
+            <li>How the username field is automatically formatted to clean spaces ("   Hello   World! " -> "Hello World!") <em>explicit formatting with rule 'cleanSpaces'</em></li>
+            <li>How the year field prevents user from inserting letters typing <em>implicit constraint by rule 'integer'</em></li>
+            <li>How error messages can be specified for each field rule in the schema object</li>
+            <li>When clicking "Validate" button, the first invalid field is automatically focused</li>
+            <li>How validation is automatically fired on blur, so its state change accordingly to its new value</li>
+            <li>Open the browser console to see the object returned by DataEntry.validate function.</li>
+          </ul>
         </section>
         <section>
           <h2>{I.t("voc.UsefulLinks")}</h2>

@@ -17,7 +17,7 @@ export default {
     },
     voc: {
       About: "About",
-      AboutText: "This demo illustrates how to use DataEntry forms validation library with React, including client side localization strategy.",
+      AboutText: "This demo illustrates how to use DataEntry forms validation library with React, including client side localization strategy. It is also a project template for React applications, with configured boilerplate (Gulp, Browserify, Watchify), client side routing, localization strategy and validation strategy (the main topic of the demo).",
       AppVersion: "Version 1.0.0",
       NotFoundTitle: "Page not found",
       NotFoundMessage: "There is nothing to do here!",
