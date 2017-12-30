@@ -46,6 +46,8 @@ class Dashboard extends React.Component {
 
       // everything is valid: we can use the data
       console.info("Everything is valid!", result.values);
+      
+      // merge the results in the state of the view;
     });
   }
 
@@ -54,7 +56,7 @@ class Dashboard extends React.Component {
     return (
       <div id="dashboard">
         <section>
-          <h2>{I.t("voc.FormExampleWithDomClasses")}</h2>
+          <h1>{I.t("voc.FormExampleWithDomClasses")}</h1>
           <DataEntryForm schema={self.schema()} ref={instance => { this.form = instance; }}>
             <div id="example-form">
               <label htmlFor="username-field">Username</label>
@@ -87,7 +89,7 @@ class Dashboard extends React.Component {
               <input id="policy-read-check" type="checkbox" name="policy-read" /><br />
             </div>
             <hr />
-            <button className="validation-trigger" onClick={() => { this.validate(); }}>Validate</button>
+            <button className="btn" onClick={() => { this.validate(); }}>Validate</button>
           </DataEntryForm>
         </section>
         <section>
@@ -104,6 +106,7 @@ class Dashboard extends React.Component {
             <li>See the demo source code: the instance of dataentry is disposed inside `componentWillUnmount` React view function. Event handlers are removed here.</li>
           </ul>
         </section>
+        <hr />
         <section>
           <h2>{I.t("voc.UsefulLinks")}</h2>
           <ul>

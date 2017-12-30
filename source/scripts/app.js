@@ -9,9 +9,9 @@ class App extends React.Component {
     <div>
       <ul id="main-menu" className="nav nav-pills nav-stacked">
         <BootstrapLink href="/" currentLocation={cl} text={I.t("menu.Dashboard")} />
-        <BootstrapLink href="/hello-world" currentLocation={cl} text={I.t("menu.HelloWorld")} />
-        <BootstrapLink href="/getting-started" currentLocation={cl} text={I.t("menu.GettingStarted")} />
-        <BootstrapLink href="/form" currentLocation={cl} text={I.t("menu.FormExample")} />
+        <BootstrapLink href="/conditional-rules" currentLocation={cl} text={I.t("menu.ConditionalRules")} />
+        <BootstrapLink href="/formatting-rules" currentLocation={cl} text={I.t("menu.FormattingRules")} />
+        <BootstrapLink href="/multiple-fields" currentLocation={cl} text={I.t("menu.MultipleFields")} />
         <BootstrapLink href="/about" currentLocation={cl} text={I.t("menu.About")} />
       </ul>
       <div id="partial-view">

@@ -36,10 +36,6 @@ class DataEntryForm extends React.Component {
 
   initializeDataEntry() {
     const node = ReactDOM.findDOMNode(this);
-
-    //var self = this, state = self.state;
-    //if (!state)
-      //throw new Error("missing component state. cannot define a dataentry without a schema.");
     const props = this.props;
     const schema = props.schema;
     if (!schema)
@@ -47,7 +43,6 @@ class DataEntryForm extends React.Component {
 
     window.view = this;
 
-    // TODO: read values from a context, instead
     // add reference to the dataentry business logic to the model
     this.dataentry = new DataEntry({
       element: node,
