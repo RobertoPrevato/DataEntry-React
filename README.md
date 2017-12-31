@@ -43,11 +43,10 @@ The React‑template utilizes the Gulp task runner. If not already installed, it
 Once the source code has been downloaded locally, it is necessary to restore the dependencies for the NodeJs tasks, which is achieved by running the npm install command in the root folder of the project template, where the packages.json file resides.
 `npm install`
 
-### Running the public-build task
+### Running the dev-init task
 Once the npm install command completes, verify that the environment works properly by issuing this terminal command:
-`gulp public-build`
-Which should produce an output like the one of the picture below:
-[![public-build](http://robertoprevato.github.io/demos/react-template/images/gulp-build.png)](http://robertoprevato.github.io/demos/react-template/images/gulp-build.png)
+`gulp dev-init`
+Which should produce navigable artifacts in a `httpdocs` folder.
 
 ***
 
