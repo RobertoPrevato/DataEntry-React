@@ -10,9 +10,9 @@ import MultipleFields from "./views/multiple-fields"
 
 var DashboardRoutes = [
   <IndexRoute component={Dashboard} key="index-route"/>,
-  <IndexRoute component={FormattingRules} key="formatting-rules"/>,
-  <IndexRoute component={ConditionalRules} key="conditional-rules"/>,
-  <IndexRoute component={MultipleFields} key="multiple-fields"/>
+  <Route path="/formatting-rules" component={FormattingRules} key="formatting-rules"/>,
+  <Route path="/conditional-rules" component={ConditionalRules} key="conditional-rules"/>,
+  <Route path="/multiple-fields" component={MultipleFields} key="multiple-fields"/>
 ]
 
 export default DashboardRoutes

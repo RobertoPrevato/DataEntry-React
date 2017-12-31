@@ -1,19 +1,19 @@
 export default {
   en: {
     titles: {
-      "Dashboard": "Dashboard",
-      "NotFound": "Page not found"
+      About: "About",
+      Dashboard: "Dashboard",
+      NotFound: "Page not found",
+      ConditionalRules: "Conditional rules",
+      FormattingRules: "Formatting rules",
+      MultipleFields: "Multiple fields"
     },
     menu: {
       About: "About",
-      Dashboard: "Dashboard"
-    },
-    date: {
-      format: {
-        long: "YYYY/MM/DD hh:mm:ss",
-        medium: "YYYY/MM/DD hh:mm",
-        short: "YYYY/MM/DD"
-      }
+      Dashboard: "Dashboard",
+      ConditionalRules: "Conditional rules",
+      FormattingRules: "Formatting rules",
+      MultipleFields: "Multiple fields"
     },
     voc: {
       About: "About",
@@ -24,20 +24,27 @@ export default {
       ReturnToHome: "Return to the homepage",
       SourceCode: "Source code:",
       UsefulLinks: "Useful links",
-      FormExampleWithDomClasses: "Example form, using built-in DOM classes"
+      FormExample: "Example form",
+      ConditionalRules: "Conditional rules",
+      FormattingRules: "Formatting rules",
+      MultipleFields: "Multiple fields",
+      DesignNote: "Note about design",
+      AboutDesign: "This demo illustrates how to use DataEntry library using all its built-in features that take care of DOM manipulation. If this is not desired, it's possible to use only its core classes and implement alternative ways to handle things that require touching the DOM."
     },
     errors: {
-      "required": "The field cannot be empty",
-      "selectValue": "Please select a value",
-      "notInteger": "The value is not a valid integer",
-      "minValue": "The minimum value is {{min}}",
-      "maxValue": "The maximum value is {{max}}",
-      "minLength": "The minimum value length is {{length}}",
-      "maxLength": "The maximum value length is {{length}}",
-      "invalidValue": "The value is invalid",
-      "canContainOnlyLetters": "The field can contain only letters",
-      "canContainOnlyDigits": "The field can contain only digits",
-      "mustBeChecked": "This must be checked"
+      required: "The field cannot be empty",
+      selectValue: "Please select a value",
+      notInteger: "The value is not a valid integer",
+      minValue: "The minimum value is {{min}}",
+      maxValue: "The maximum value is {{max}}",
+      minLength: "The minimum value length is {{length}}",
+      maxLength: "The maximum value length is {{length}}",
+      invalidValue: "The value is invalid",
+      canContainOnlyLetters: "The field can contain only letters",
+      canContainOnlyDigits: "The field can contain only digits",
+      mustBeChecked: "This must be checked",
+      invalidEmail: "The email address is not valid",
+      invalidPhone: "The phone number is not valid"
     }
   }
 };

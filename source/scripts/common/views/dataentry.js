@@ -4,13 +4,6 @@ import I from "ilocale";
 import DataEntry from "dataentry"
 import DataEntryDom from "dataentry/dom"
 
-// ********************************************************************************************* //
-// TODO:
-//
-// Example with DOM classes (and somehow writing back to the model in a way that makes sense)
-// Example with Context classes (let React make all DOM manipulation)
-//
-// ********************************************************************************************* //
 
 class DataEntryForm extends React.Component {
 
@@ -39,18 +32,41 @@ class DataEntryForm extends React.Component {
     const props = this.props;
     const schema = props.schema;
     if (!schema)
-      throw new Error("missing schema definition inside the model. cannot define a dataentry without a schema.");
+      throw new Error("missing `schema` property, cannot define a dataentry without a schema.");
 
-    window.view = this;
+    const onFormat = props.onFormat;
+    if (!onFormat)
+      console.warn("missing `onFormat` property, an handler is necessary to propagate formatting to state!");
+    else if (typeof onFormat != "function")
+      throw new Error("onFormat property must be a function");
 
     // add reference to the dataentry business logic to the model
-    this.dataentry = new DataEntry({
+    const dataentry = new DataEntry({
       element: node,
       marker: DataEntryDom.DomDecorator,
       harvester: DataEntryDom.DomHarvester,
       binder: DataEntryDom.DomBinder,
       schema: schema
     })
+
+    if (onFormat) {
+      // when a value is formatted,
+      dataentry.on("format", function (field, name, value) {
+        console.log(field, name, value)
+        switch (onFormat.length) {
+          case 2:
+            onFormat(name, value)
+          break;
+          case 3:
+            onFormat(field, name, value)
+          break;
+          default:
+            throw new Error("onFormat function must handle two or three named parameters");
+        }
+      })
+    }
+
+    this.dataentry = dataentry;
   }
 
   componentWillUnmount() {

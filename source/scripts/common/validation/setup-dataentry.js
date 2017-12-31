@@ -1,4 +1,5 @@
 import DataEntry from "dataentry"
+import ContactRules from "./rules/contacts"
 import I from "ilocale"
 
 
