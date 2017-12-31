@@ -4,6 +4,8 @@ It contains a sample application and is preconfigured to offer integration with 
 
 The demo has been created to show an example of integration with the forms validation library [Dataentry](https://github.com/RobertoPrevato/DataEntry).
 
+The demo can be seen here: [https://robertoprevato.github.io/demos/dataentry/index.html](https://robertoprevato.github.io/demos/dataentry/index.html).
+
 ## React-template
 This demo has been prepared editing the React project template available here: [https://github.com/RobertoPrevato/React-template](https://github.com/RobertoPrevato/React-template).
 
@@ -15,7 +17,6 @@ The project template offers an example of client side technology stack, featurin
 * Strategy to organize the source code (both JavaScript and LESS), into logical areas
 * Client side routing, using [react-router](https://github.com/reactjs/react-router)
 * Client side localization strategy
-* Integration with [Bootstrap](http://getbootstrap.com/)
 * Strategy to display preloaders and error panels
 * Example of React components definition, using ES6 class
 * Compilation of LESS code into CSS
